@@ -1,3 +1,4 @@
+import { ChevronUpIcon } from "@heroicons/react/24/solid";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Header from "@/components/Header";
@@ -21,7 +22,7 @@ export default async function Home() {
   const projects: Project[] = await fetchProjects();
 
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]">
+    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A] scroll-pt-20">
       {/* <div> */}
       <Header socials={socials} />
       <section id="hero" className="snap-start">
@@ -40,16 +41,12 @@ export default async function Home() {
         <Projects projects={projects} />
       </section>
       <section id="contact" className="snap-center">
-        <Contact />
+        <Contact pageInfo={pageInfo} />
       </section>
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
-            <img
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              src="/top.png"
-              alt="Back to top"
-            />
+            <ChevronUpIcon className="h-10 w-10 rounded-full text-gray-500 hover:text-[#F7AB0A] transition-colors duration-200 cursor-pointer" />
           </div>
         </footer>
       </Link>

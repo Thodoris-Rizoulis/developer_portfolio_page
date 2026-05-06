@@ -11,7 +11,7 @@ type Props = {
 
 function ExperienceCard({ experience }: Props) {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden min-w-[300px]">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[85vw] sm:w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 opacity-100 md:opacity-40 md:hover:opacity-100 transition-opacity duration-200 overflow-hidden min-w-[85vw] sm:min-w-[300px]">
       <motion.img
         initial={{
           y: -100,
@@ -22,9 +22,9 @@ function ExperienceCard({ experience }: Props) {
         viewport={{ once: true }}
         className="w-32 h-32 rounded-full xl:w-48 xl:h-48 object-cover"
         src={urlFor(experience.companyImage).url()}
-        alt=""
+        alt={`${experience.company} logo`}
       />
-      <div className="px-0 md-px-10 ">
+      <div className="px-0 md:px-10 ">
         <h4 className="text-4xl font-light">{experience.company}</h4>
         <p className="font-bold text-2xl mt-1">{experience.jobTitle}</p>
         <div className="flex space-x-2 my-2">
@@ -45,7 +45,7 @@ function ExperienceCard({ experience }: Props) {
             : new Date(experience.dateEnded).toDateString()}
         </p>
 
-        <ul className="list-disc space-y-5 ml-5 texl-lg">
+        <ul className="list-disc space-y-5 ml-5 text-lg">
           {experience.points &&
             experience.points.map((point, i) => {
               return <li key={i}>{point}</li>;

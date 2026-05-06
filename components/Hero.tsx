@@ -18,15 +18,15 @@ function Hero({ pageInfo }: Props) {
       "Welcome!",
       `The Name's ${pageInfo.name}.`,
       "Guy Who Loves Coding.",
-      "Lets Build Your Idea!",
+      "Let's Build Your Idea!",
     ],
     loop: true,
     delaySpeed: 2000,
   });
   return (
-    <div>
-      <div className="h-screen flex flex-col items-center justify-center space-y-8 text-center overflow-hidden ">
-        {/* <BackgroundCircles /> */}
+    <div className="relative h-screen overflow-hidden">
+      <BackgroundCircles />
+      <div className="relative z-10 h-screen flex flex-col items-center justify-center space-y-8 text-center overflow-hidden">
         <Image
           src={urlFor(pageInfo.heroImage).url()}
           alt="profile image"
@@ -45,19 +45,26 @@ function Hero({ pageInfo }: Props) {
             <Cursor cursorColor="#F7AB0A" />
           </h1>
 
-          <div className="pt-5">
-            <Link href={"#about"}>
-              <button className="heroButton">About</button>
-            </Link>
-            <Link href={"#experience"}>
-              <button className="heroButton">Experience</button>
-            </Link>
-            <Link href={"#skills"}>
-              <button className="heroButton">Skills</button>
-            </Link>
-            <Link href={"#projects"}>
-              <button className="heroButton">Projects</button>
-            </Link>
+          <div className="pt-5 flex flex-col sm:flex-row items-center justify-center gap-2">
+            <div className="flex gap-2">
+              <Link href={"#about"}>
+                <button className="heroButton">About</button>
+              </Link>
+              <Link href={"#experience"}>
+                <button className="heroButton">Experience</button>
+              </Link>
+              <Link href={"#skills"}>
+                <button className="heroButton">Skills</button>
+              </Link>
+            </div>
+            <div className="flex gap-2">
+              <Link href={"#projects"}>
+                <button className="heroButton">Projects</button>
+              </Link>
+              <Link href={"#contact"}>
+                <button className="heroButton">Contact</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
