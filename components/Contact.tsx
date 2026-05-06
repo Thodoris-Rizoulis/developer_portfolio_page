@@ -41,7 +41,7 @@ function Contact({ pageInfo }: Props) {
       <div className="flex flex-col space-y-8 md:space-y-10 w-full max-w-2xl">
         <h4 className="text-4xl font-semibold text-center">
           I have got just what you need.{" "}
-          <span className="underline decoration-[#F7AB0A]/50">Let's Talk.</span>
+          <span className="underline decoration-[#F7AB0A]/50">Let&apos;s Talk.</span>
         </h4>
         <div className="space-y-6 md:space-y-10 my-5">
           <div className="flex items-center space-x-5 justify-center">

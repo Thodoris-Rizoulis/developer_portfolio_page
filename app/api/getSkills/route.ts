@@ -5,7 +5,7 @@ const query = groq`
     *[_type == "skill"]
 `;
 
-export async function GET(request: Request) {
+export async function GET() {
   const skills: Skill[] = await sanityClient.fetch(query);
 
   return new Response(JSON.stringify({ skills }), {
