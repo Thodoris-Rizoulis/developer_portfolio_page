@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import WorkExperience from "@/components/WorkExperience";
+import BackToTop from "@/components/BackToTop";
 import Link from "next/link";
 import { Experience, PageInfo, Project, Skill, Social } from "@/typings";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
@@ -24,7 +25,7 @@ export default async function Home() {
   const projects: Project[] = await fetchProjects();
 
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A] scroll-pt-20">
+    <div className="bg-[rgb(36,36,36)] text-white h-screen md:snap-y md:snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A] scroll-pt-20">
       {/* <div> */}
       <Header socials={socials} />
       <section id="hero" className="snap-start">
@@ -45,13 +46,7 @@ export default async function Home() {
       <section id="contact" className="snap-center">
         <Contact pageInfo={pageInfo} />
       </section>
-      <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
-          <div className="flex items-center justify-center">
-            <ChevronUpIcon className="h-10 w-10 rounded-full text-gray-500 hover:text-[#F7AB0A] transition-colors duration-200 cursor-pointer" />
-          </div>
-        </footer>
-      </Link>
+      <BackToTop />
     </div>
   );
 }

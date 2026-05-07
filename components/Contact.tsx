@@ -34,7 +34,7 @@ function Contact({ pageInfo }: Props) {
   };
 
   return (
-    <div className="relative min-h-screen md:h-screen flex flex-col md:flex-row text-center md:text-left max-w-7xl px-10 py-12 md:py-0 justify-start md:justify-evenly mx-auto items-center gap-8 md:gap-0">
+    <div className="relative min-h-screen md:h-screen flex flex-col md:flex-row text-center md:text-left max-w-7xl px-4 sm:px-10 md:px-16 py-8 sm:py-12 md:py-0 justify-start md:justify-evenly mx-auto items-center gap-8 md:gap-0">
       <h3 className="tracking-[20px] text-gray-500 text-2xl mb-6 md:mb-0 md:absolute md:top-24">
         CONTACT
       </h3>

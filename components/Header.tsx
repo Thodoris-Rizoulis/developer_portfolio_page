@@ -12,7 +12,7 @@ type Props = {
 
 function Header({ socials }: Props) {
   return (
-    <header className="sticky top-2 flex justify-around max-w-7xl mx-auto z-20">
+    <header className="sticky top-2 flex justify-between px-4 sm:px-6 max-w-7xl mx-auto z-20">
       <motion.div
         initial={{
           x: -500,
@@ -36,6 +36,7 @@ function Header({ socials }: Props) {
               url={social.url}
               fgColor="gray"
               bgColor="transparent"
+              className="focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] rounded-full"
             />
           );
         })}
@@ -61,9 +62,10 @@ function Header({ socials }: Props) {
           network="email"
           fgColor="gray"
           bgColor="transparent"
+          className="focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] rounded-full"
         />
         <Link href="#contact">
-          <p className="hidden md:inline-flex text-sm text-gray-400">
+          <p className="hidden md:inline-flex text-sm text-gray-400 hover:text-[#F7AB0A] focus-visible:text-[#F7AB0A] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] rounded px-2 py-1 transition-colors">
             CONTACT ME
           </p>
         </Link>
