@@ -14,6 +14,8 @@ import { fetchSkills } from "@/utils/fetchSkills";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchSocials } from "@/utils/fetchSocials copy";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const socials: Social[] = await fetchSocials();
   const pageInfo: PageInfo = await fetchPageInfo();
