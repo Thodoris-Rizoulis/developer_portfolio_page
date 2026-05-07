@@ -1,4 +1,4 @@
-import { ChevronUpIcon } from "@heroicons/react/24/solid";
+// ...existing code...
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Header from "@/components/Header";
@@ -7,7 +7,7 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import WorkExperience from "@/components/WorkExperience";
 import BackToTop from "@/components/BackToTop";
-import Link from "next/link";
+// ...existing code...
 import { Experience, PageInfo, Project, Skill, Social } from "@/typings";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchExperiences } from "@/utils/fetchExperiences";
