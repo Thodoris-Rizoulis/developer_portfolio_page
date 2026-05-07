@@ -28,15 +28,15 @@ function Projects({ projects }: Props) {
         PROJECTS
       </h3>
 
-      {/* Scroll area with arrows - mobile: overlaid, desktop: side-by-side */}
+      {/* Scroll area with arrows - always overlaid */}
       <div className="w-full relative flex items-center justify-center">
         {projects.length > 1 && (
           <button
             onClick={() => scroll("left")}
             aria-label="Previous project"
-            className="absolute left-1 md:relative md:left-0 z-30 p-2 md:p-3 rounded-full bg-[#292929]/95 border border-gray-700 text-[#F7AB0A] hover:bg-[#F7AB0A] hover:text-black focus-visible:bg-[#F7AB0A] focus-visible:text-black focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] transition-colors duration-200 flex items-center justify-center shadow-lg flex-shrink-0"
+            className="absolute left-2 md:left-4 z-30 p-2 md:p-3 rounded-full bg-[#292929] border border-gray-700 text-[#F7AB0A] hover:bg-[#F7AB0A] hover:text-black focus-visible:bg-[#F7AB0A] focus-visible:text-black focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] transition-colors duration-200 flex items-center justify-center shadow-lg flex-shrink-0"
           >
-            <ChevronLeftIcon className="h-5 w-5 md:h-7 md:w-7" />
+            <ChevronLeftIcon className="h-6 w-6 md:h-8 md:w-8" />
           </button>
         )}
           <div
@@ -127,9 +127,9 @@ function Projects({ projects }: Props) {
           <button
             onClick={() => scroll("right")}
             aria-label="Next project"
-            className="absolute right-1 md:relative md:right-0 z-30 p-2 md:p-3 rounded-full bg-[#292929]/95 border border-gray-700 text-[#F7AB0A] hover:bg-[#F7AB0A] hover:text-black focus-visible:bg-[#F7AB0A] focus-visible:text-black focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] transition-colors duration-200 flex items-center justify-center shadow-lg flex-shrink-0"
+            className="absolute right-2 md:right-4 z-30 p-2 md:p-3 rounded-full bg-[#292929] border border-gray-700 text-[#F7AB0A] hover:bg-[#F7AB0A] hover:text-black focus-visible:bg-[#F7AB0A] focus-visible:text-black focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] transition-colors duration-200 flex items-center justify-center shadow-lg flex-shrink-0"
           >
-            <ChevronRightIcon className="h-5 w-5 md:h-7 md:w-7" />
+            <ChevronRightIcon className="h-6 w-6 md:h-8 md:w-8" />
           </button>
         )}
       </div>

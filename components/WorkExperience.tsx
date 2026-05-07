@@ -14,8 +14,12 @@ function WorkExperience({ experiences }: Props) {
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
-    // Scroll by approximately one card width
-    const scrollAmount = 400;
+    // Get the first card to calculate its width including margin
+    const firstCard = scrollRef.current.firstElementChild as HTMLElement;
+    if (!firstCard) return;
+    const cardWidth = firstCard.offsetWidth;
+    const gap = 20; // space-x-5 = 1.25rem = 20px
+    const scrollAmount = cardWidth + gap;
     scrollRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
@@ -28,20 +32,20 @@ function WorkExperience({ experiences }: Props) {
         EXPERIENCE
       </h3>
 
-      {/* Scroll area with arrows - mobile: overlaid, desktop: side-by-side */}
-      <div className="w-full max-w-[90%] lg:max-w-[75%] xl:max-w-[65%] relative flex items-center justify-center">
+      {/* Scroll area with arrows - always overlaid */}
+      <div className="w-full max-w-[95%] lg:max-w-[88%] xl:max-w-[85%] relative flex items-center justify-center">
         {experiences.length > 1 && (
           <button
             onClick={() => scroll("left")}
             aria-label="Previous experience"
-            className="absolute left-1 md:relative md:left-0 z-30 p-2 md:p-3 rounded-full bg-[#292929]/95 border border-gray-700 text-[#F7AB0A] hover:bg-[#F7AB0A] hover:text-black focus-visible:bg-[#F7AB0A] focus-visible:text-black focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] transition-colors duration-200 flex items-center justify-center shadow-lg flex-shrink-0"
+            className="absolute -left-2 md:left-2 lg:left-4 z-30 p-2 md:p-3 rounded-full bg-[#292929] border border-gray-700 text-[#F7AB0A] hover:bg-[#F7AB0A] hover:text-black focus-visible:bg-[#F7AB0A] focus-visible:text-black focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] transition-colors duration-200 flex items-center justify-center shadow-lg flex-shrink-0"
           >
-            <ChevronLeftIcon className="h-5 w-5 md:h-7 md:w-7" />
+            <ChevronLeftIcon className="h-6 w-6 md:h-8 md:w-8" />
           </button>
         )}
         <div
           ref={scrollRef}
-          className="no-scrollbar w-full flex space-x-5 overflow-x-scroll py-10 px-0 md:px-4 scroll-smooth"
+          className="no-scrollbar w-full flex space-x-5 overflow-x-scroll py-10 px-0 md:px-4 scroll-smooth snap-x snap-mandatory"
         >
           {experiences && experiences.length > 0 ? (
             experiences.map((experience) => (
@@ -55,9 +59,9 @@ function WorkExperience({ experiences }: Props) {
           <button
             onClick={() => scroll("right")}
             aria-label="Next experience"
-            className="absolute right-1 md:relative md:right-0 z-30 p-2 md:p-3 rounded-full bg-[#292929]/95 border border-gray-700 text-[#F7AB0A] hover:bg-[#F7AB0A] hover:text-black focus-visible:bg-[#F7AB0A] focus-visible:text-black focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] transition-colors duration-200 flex items-center justify-center shadow-lg flex-shrink-0"
+            className="absolute -right-2 md:right-2 lg:right-4 z-30 p-2 md:p-3 rounded-full bg-[#292929] border border-gray-700 text-[#F7AB0A] hover:bg-[#F7AB0A] hover:text-black focus-visible:bg-[#F7AB0A] focus-visible:text-black focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7AB0A] transition-colors duration-200 flex items-center justify-center shadow-lg flex-shrink-0"
           >
-            <ChevronRightIcon className="h-5 w-5 md:h-7 md:w-7" />
+            <ChevronRightIcon className="h-6 w-6 md:h-8 md:w-8" />
           </button>
         )}
       </div>
