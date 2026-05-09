@@ -1,4 +1,3 @@
-// ...existing code...
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Header from "@/components/Header";
@@ -7,7 +6,6 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import WorkExperience from "@/components/WorkExperience";
 import BackToTop from "@/components/BackToTop";
-// ...existing code...
 import { Experience, PageInfo, Project, Skill, Social } from "@/typings";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchExperiences } from "@/utils/fetchExperiences";
@@ -26,7 +24,6 @@ export default async function Home() {
 
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen md:snap-y md:snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A] scroll-pt-20">
-      {/* <div> */}
       <Header socials={socials} />
       <section id="hero" className="snap-start">
         <Hero pageInfo={pageInfo} />
